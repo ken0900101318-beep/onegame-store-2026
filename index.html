@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商家端 2.0.0 版本大更新</title>
+<style>
+  :root{
+    --bg:#f3f5fb;
+    --card:#ffffff;
+    --card2:#f7f9ff;
+    --line:#e3e8f4;
+    --text:#1c2237;
+    --muted:#5b647e;
+    --accent:#4263eb;
+    --accent2:#7048e8;
+    --gold:#f59f00;
+    --green:#0ca678;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang TC","Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif;
+    background:radial-gradient(1100px 520px at 50% -8%,#e6ecff 0,transparent 60%),var(--bg);
+    color:var(--text);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 80px}
+
+  /* Hero */
+  header{
+    text-align:center;
+    padding:64px 18px 40px;
+  }
+  .badge{
+    display:inline-block;
+    font-size:14px;
+    letter-spacing:2px;
+    color:var(--accent);
+    background:rgba(66,99,235,.10);
+    border:1px solid rgba(66,99,235,.30);
+    padding:6px 16px;
+    border-radius:999px;
+    margin-bottom:20px;
+  }
+  h1{
+    font-size:clamp(28px,7vw,46px);
+    font-weight:800;
+    letter-spacing:1px;
+    background:linear-gradient(90deg,#2742b8,#7048e8);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+    line-height:1.25;
+  }
+  .sub{color:var(--muted);margin-top:14px;font-size:16px}
+
+  /* Download CTA */
+  .cta{
+    margin:30px auto 0;
+    display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .dlbtn{
+    display:inline-flex;align-items:center;gap:10px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:#fff;text-decoration:none;font-weight:700;font-size:18px;
+    padding:15px 30px;border-radius:14px;
+    box-shadow:0 10px 26px rgba(66,99,235,.30);
+    transition:transform .15s ease,box-shadow .15s ease;
+  }
+  .dlbtn:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(66,99,235,.42)}
+  .dlurl{color:var(--muted);font-size:14px;word-break:break-all}
+  .dlurl a{color:var(--accent);text-decoration:none}
+
+  /* Section cards */
+  section{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 24px;
+    margin-top:22px;
+    box-shadow:0 6px 20px rgba(28,34,55,.06);
+  }
+  .sec-head{
+    display:flex;align-items:center;gap:14px;margin-bottom:6px;
+  }
+  .num{
+    flex:none;
+    width:44px;height:44px;border-radius:12px;
+    display:grid;place-items:center;
+    font-size:22px;font-weight:800;color:#fff;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+  }
+  .sec-head h2{font-size:22px;font-weight:800;letter-spacing:.5px}
+
+  ul.feat{list-style:none;margin-top:14px;display:grid;gap:12px}
+  ul.feat li{
+    background:var(--card2);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px 16px 14px 46px;
+    position:relative;
+  }
+  ul.feat li::before{
+    content:"";
+    position:absolute;left:16px;top:20px;
+    width:14px;height:14px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#7d97ff,var(--accent));
+    box-shadow:0 0 0 4px rgba(66,99,235,.12);
+  }
+  ul.feat li b{color:#141a2e;font-weight:700}
+  ul.feat li .t{color:var(--muted)}
+
+  /* Highlight box */
+  .highlight{
+    background:linear-gradient(135deg,rgba(245,159,0,.10),rgba(112,72,232,.07));
+    border:1px solid rgba(245,159,0,.45);
+  }
+  .highlight .num{background:linear-gradient(135deg,var(--gold),#ff922b);color:#3d2600}
+  .highlight h2{color:#b8740a}
+  .pill{
+    display:inline-block;background:rgba(12,166,120,.12);
+    border:1px solid rgba(12,166,120,.5);color:var(--green);
+    font-weight:700;border-radius:8px;padding:2px 10px;margin:0 2px;
+  }
+
+  /* Note */
+  .note{
+    text-align:center;color:var(--muted);font-size:15px;
+    margin-top:30px;padding:18px;border:1px dashed var(--line);border-radius:14px;
+    background:var(--card);
+  }
+  footer{text-align:center;color:#9aa2bd;font-size:13px;margin-top:40px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="badge">VERSION 2.0.0 ・ 重大更新</span>
+    <h1>商家端 2.0.0 版本大更新</h1>
+    <p class="sub">介面全面優化，功能更直覺、操作更快速</p>
+
+    <div class="cta">
+      <a class="dlbtn" href="https://store.onegame.tw/dl/" target="_blank" rel="noopener">⬇ 立即下載更新</a>
+      <p class="dlurl">更新網址：<a href="https://store.onegame.tw/dl/" target="_blank" rel="noopener">https://store.onegame.tw/dl/</a></p>
+    </div>
+  </header>
+
+  <!-- 一、首頁 -->
+  <section>
+    <div class="sec-head"><div class="num">1</div><h2>首頁</h2></div>
+    <ul class="feat">
+      <li><b>包廂近況</b><br><span class="t">已移至下方功能列表，可查看全部包廂近況。</span></li>
+      <li><b>營收監控</b><br><span class="t">首頁新增「7 日收入曲線」，營收一眼掌握。</span></li>
+    </ul>
+  </section>
+
+  <!-- 二、會員 -->
+  <section>
+    <div class="sec-head"><div class="num">2</div><h2>會員主要新增功能</h2></div>
+    <ul class="feat">
+      <li><b>名單篩選</b><br><span class="t">可篩選有別名的客人，方便搜尋搗亂的客人。</span></li>
+      <li><b>消費排行</b><br><span class="t">新增客人消費排行功能。</span></li>
+      <li><b>會員詳情</b><br><span class="t">功能鍵重排，發放卡券更快速。</span></li>
+      <li><b>快速撥號</b><br><span class="t">按客人電話號碼，可直接撥號。</span></li>
+      <li><b>手動註冊</b><br><span class="t">客人收不到驗證碼時，商家可於右上角協助註冊會員。</span></li>
+    </ul>
+  </section>
+
+  <!-- 三、訂單管理 -->
+  <section>
+    <div class="sec-head"><div class="num">3</div><h2>訂單管理</h2></div>
+    <ul class="feat">
+      <li><b>精準查詢</b><br><span class="t">可篩選日期與包廂，方便查詢特定包廂的訂單狀態。</span></li>
+      <li><b>訂單細節</b><br><span class="t">訂單卡片可再點擊進入，查看詳細消費資訊與到店資訊。</span></li>
+      <li><b>聯繫功能</b><br><span class="t">可直接撥打電話給客人。</span></li>
+    </ul>
+  </section>
+
+  <!-- 四、包廂近況 -->
+  <section>
+    <div class="sec-head"><div class="num">4</div><h2>包廂近況</h2></div>
+    <ul class="feat">
+      <li><b>快速導航</b><br><span class="t">點擊時間條，會跳轉到該訂單的卡片資訊。</span></li>
+      <li><b>時間顯示</b><br><span class="t">會顯示該座位幾點結束。</span></li>
+      <li><b>預約提醒</b><br><span class="t">會顯示下一筆訂單時間。</span></li>
+    </ul>
+  </section>
+
+  <!-- 五、更多設定 -->
+  <section>
+    <div class="sec-head"><div class="num">5</div><h2>更多設定</h2></div>
+    <ul class="feat">
+      <li><b>設備管理</b><br><span class="t">已從下方功能列移至「更多」內，是控制設備的地方。</span></li>
+      <li><b>包廂狀態</b><br><span class="t">包廂故障會顯示數量，點擊即可查看對應的包廂。</span></li>
+      <li><b>介面自訂</b><br><span class="t">常用功能可自行設定排序，調整成自己最需要的介面。</span></li>
+      <li><b>價格與分類</b><br><span class="t">整合設定，以後只需設定一次，更改後可連動到全部包廂。</span></li>
+      <li><b>特殊時段</b><br><span class="t">運動類特殊時段，新增「國定假日」時間選項。</span></li>
+      <li><b>權限設定</b><br><span class="t">新增店員時可直接在同頁面設定權限，系統預設四個角色，可於「權限設定」內調整。</span></li>
+      <li><b>資訊整合</b><br><span class="t">公告、店家照片、優惠活動，皆已整合在「店家內容」內。</span></li>
+    </ul>
+  </section>
+
+  <!-- 推薦一定要做 -->
+  <section class="highlight">
+    <div class="sec-head"><div class="num">★</div><h2>推薦一定要做的事情</h2></div>
+    <ul class="feat">
+      <li><b>員工權限</b><br><span class="t">請重新設定確認一次，並登入查看。員工預設密碼 <span class="pill">666666</span></span></li>
+    </ul>
+  </section>
+
+  <div class="note">
+    本次調整內容較多，若有功能尚未調整完善之處，敬請見諒 🙏
+  </div>
+
+  <footer>商家端 2.0.0 ・ OneGame</footer>
+
+</div>
+</body>
+</html>
